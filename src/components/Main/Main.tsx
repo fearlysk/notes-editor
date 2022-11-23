@@ -23,6 +23,13 @@ const Main = ({activeNote, onUpdateNote}: IMainProps) => {
                   onChange={(e) => onEditField("title", e.target.value)}
                   autoFocus 
                 />
+                 <input 
+                  type="text" 
+                  id="tag" 
+                  value={activeNote.tag} 
+                  onChange={(e) => onEditField("tag", e.target.value)}
+                  placeholder="Add tag..."
+                />
                 <textarea 
                   id="body"
                   placeholder="Add note..." 
@@ -32,6 +39,7 @@ const Main = ({activeNote, onUpdateNote}: IMainProps) => {
             </div>
             <div className="app-main-note-preview">
                 <h1 className="preview-title">{activeNote.title}</h1>
+                <h5 className="preview-title">{activeNote.tag ? "Tag: " + activeNote.tag : null}</h5>
                 <ReactMarkdown className="markdown-preview">{activeNote.body}</ReactMarkdown>
             </div>
         </div>

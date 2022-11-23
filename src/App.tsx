@@ -23,6 +23,7 @@ function App() {
       title: "Note",
       body: "",
       lastModified: Date.now(),
+      tag: ""
     }
     setNotes([newNote, ...notes]);
     setActiveNote(newNote.id as never);
